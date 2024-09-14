@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let container = document.createElement("div");
+        container.style.width = "100%";
+        container.style.height = "100px";
+        // container.style.backgroundColor = "red";
+        container.style.textAlign = "center";
+        document.body.append(container);
+
+        let heading = document.createElement("h1");
+        heading.innerText = "Resume";
+        container.appendChild(heading);
+
+        let name = document.createElement("h2");
+        name.innerText = "Srikanth";
+        container.appendChild(name);
+
+        let qualification = document.createElement("Div");
+        qualification.innerText = "Qualification :- ";
+        qualification.style.fontSize = "20px";
+        qualification.style.color = "blue";
+        qualification.style.lineHeight = "10px"
+        document.body.append(qualification);
+
+        let B_E = document.createElement("p");
+        B_E.innerText = "B.E - Electronics and communication Engeering";
+        qualification.appendChild(B_E);
+
+        let grade = document.createElement("p");
+        grade.innerText = "CPGA - 8.2";
+        qualification.appendChild(grade);
+
+        let year =  document.createElement("p");
+        year.innerText = "year - 2024";
+        qualification.appendChild(year);
+
+        let clg =  document.createElement("p");
+        clg.innerText = "Saveetha Engineering College";
+        qualification.appendChild(clg);
+
+        let skills = document.createElement("Div");
+        skills.innerText = "Skills :- ";
+        skills.style.fontSize = "20px";
+        skills.style.marginTop = "50px"
+        skills.style.color = "green";
+        skills.style.lineHeight = "10px"
+        document.body.append(skills);
+
+        let java = document.createElement("p");
+        java.innerText = "Java";
+        skills.appendChild(java);
+
+        let html = document.createElement("p");
+        html.innerText = "Html";
+        skills.appendChild(html);
+
+        let css = document.createElement("p");
+        css.innerText = "Css";
+        skills.appendChild(css);
+
+        let js = document.createElement("p");
+        js.innerText = "JavaScript";
+        skills.appendChild(js);
+
+
+        let info = document.createElement("div");
+        info.innerText = "Contact Info :-";
+        info.style.fontSize = "20px";
+        info.style.marginTop = "50px"
+        info.style.lineHeight = "10px";
+        info.style.color = "tomato";
+        document.body.append(info);
+
+        let email = document.createElement("p");
+        email.innerText = "Email - Srikanthnuthalapati@outlook.com";
+        info.appendChild(email);
+
+        let phone = document.createElement("p");
+        phone.innerText = "phone - 8919036588";
+        info.appendChild(phone);
+
+        let add = document.createElement("p");
+        add.innerText = "28/395 - Nellore, A P";
+        info.appendChild(add);
+
+        let projects = document.createElement("div");
+        projects.innerText = "Project :-";
+        projects.style.fontSize = "20px";
+        projects.style.marginTop = "50px"
+        projects.style.lineHeight = "10px";
+        projects.style.color = "grey";
+        document.body.append(projects);
+
+        let project = document.createElement("p");
+        project.innerText = "Project :- Smart Device for Blind People";
+        projects.appendChild(project);
+
+        let Languages = document.createElement("div");
+        Languages.innerText = "Languages :-";
+        Languages.style.fontSize = "20px";
+        Languages.style.marginTop = "50px"
+        Languages.style.lineHeight = "10px";
+        document.body.append(Languages);
+
+        let lang1 = document.createElement("p");
+        lang1.innerText = "English";
+        Languages.appendChild(lang1);
+
+        let lang2 = document.createElement("p");
+        lang2.innerText = "Telugu";
+        Languages.appendChild(lang2);
+
+        let lang3 = document.createElement("p");
+        lang3.innerText = "Hindi";
+        Languages.appendChild(lang3);
+
+        let declaration = document.createElement("div");
+        declaration.innerText = "Declaration :-";
+        declaration.style.fontSize = "20px";
+        declaration.style.marginTop = "50px"
+        declaration.style.lineHeight = "10px";
+        declaration.style.color = "brown";
+        document.body.append(declaration);
+
+        let sign = document.createElement("p");
+        sign.innerText = "I hereby declare that the project work submitted by me is an original work.";
+        declaration.appendChild(sign);
+    </script>
+</body>
+</html>

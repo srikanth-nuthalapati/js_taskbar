@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add{
+            background-color: #691d1d;
+            color: lightblue;
+        }
+        .none{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="img3.avif" alt="img3" height="100px">
+
+
+    <p class="n">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque rem quia, exercitationem quibusdam nesciunt voluptatem delectus architecto hic ullam repudiandae!</p>
+    <button>change text</button>
+
+    <button id="btn">hide it</button>
+    <script>
+        var img = document.querySelector('img');
+        img.src = 'img4.avif';
+        img.setAttribute("alt", "img4");
+
+
+        var p = document.querySelector('p');
+        var btn = document.querySelector('button');
+        btn.addEventListener("click", function(){
+            p.textContent = "Text changed";
+        })
+
+        btn.addEventListener("click", function(){
+            p.classList.toggle("add");
+        })
+
+        var btn2 = document.getElementById("btn");
+        btn2.addEventListener("click",function(){
+            p.classList.toggle("none");
+        })
+    </script>
+</body>
+</html>
