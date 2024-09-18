@@ -1,0 +1,61 @@
+<!-- password strength checker -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span#strong{
+            color: green;
+            display: none;
+        }
+        span#medium{
+            color: blue;
+            display: none;
+        }
+        span#weak{
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br><br>
+        <label for="confirm_password">confirm :</label>
+        <input type="password" id="confirm_password"><br><br>
+        <input type="submit" name="submit">
+    </form>
+    <span id="strong">password is strong..</span>
+    <span id="medium">password is medium..</span>
+    <span id="weak">password is weak..</span>
+
+    <script>
+        let form = document.querySelector("form");
+        var weak = document.getElementById("weak");
+       form.addEventListener("submit", (event) => {
+        event.preventDefault();
+           let password1 = event.target[0].value;
+           let password2 = event.target[1].value;
+           if(password1 !== password2){
+            alert("both passwords doesn't match");
+           }
+           if(password1.length >= 10){
+            document.getElementById("strong").style.display = "block";
+           }
+           else if(password1.length >=5 && password1.length < 10){
+            document.getElementById("medium").style.display = "block";
+           }
+           else if(password1.length >=1){
+            document.getElementById("weak").style.display = "block";
+           }
+           else{
+            alert("password should not be empty!");
+           }
+       });
+
+    </script>
+</body>
+</html>

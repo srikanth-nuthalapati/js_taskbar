@@ -1,0 +1,136 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    box-shadow: 0 0 5px;
+    padding: 10px;
+    background: white;
+    z-index: 1;
+}
+header div{
+    letter-spacing: 2px;
+    font-size: 1.3em;
+
+}
+header nav{
+    padding: 0 10px;
+}
+header nav a{
+    text-decoration: none;
+    padding: 0 10px;
+    color: black;
+    font-size: 1.2em;
+}
+
+.fpage{
+    background-image: url("architect.jpg");
+    height: 120vh;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+.fpage .text{
+    position: absolute;
+    top: 44%;
+    left: 39%;
+}
+.fpage .text h2{
+    color: rgba(255, 255, 255, 0.836);
+    letter-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.2em;
+    font-weight: 500;
+}
+.fpage .text h2 span{
+    background-color: rgba(0, 0, 0, 0.733);
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+}
+.spage{
+    width: 100%;
+    height: 120vh;
+    margin-top: 40px;
+}
+.spage h2{
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+}
+.spage .img-container{
+    height: 100vh;
+    width: 95%;
+    padding: 30px;
+}
+.tpage{
+    width: 100%;
+    height: 100vh;
+}
+.tpage h2{
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+    font-size: 2.5em;
+}
+.tpage p{
+    text-align: justify;
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+.tpage #card-container{
+    height: 70vh;
+    width: 96%;
+    margin: 20px;
+}
+.page4{
+    width: 100%;
+}
+.page4 h1{
+    margin-top: 60px;
+    margin-left: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+    padding: 10px;
+}
+.page4 p{
+    margin-left: 30px;
+    font-size: 1.2em;
+}
+.page4 .form{
+    margin: 20px;
+    padding: 10px;
+}
+.page4 .form input{
+    width: 100%;
+    margin:  5px 0px;
+    padding: 10px;
+}
+.page4 .form input::placeholder{
+    font-size: 1.2em;
+}
+.page4 button{
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-left: 30px;
+}
+.page4 button:hover{
+    background-color: rgb(228, 228, 228);
+    color: black;
+}
+footer{
+    width: 98%;
+    margin-top: 40px;
+    padding: 10px;
+}
+footer img{
+    width: 100%;
+}
