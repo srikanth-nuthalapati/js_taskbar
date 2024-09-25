@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        div{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        async function api() {
+            let a = await fetch("https://fakestoreapi.com/products");
+            let b = await a.json();
+
+        let container = document.getElementById("container");
+        
+        for(let i=0;i<b.length;i++){
+        let div = document.createElement("div");
+        div.style.width = "300px";
+        div.style.height = "420px";
+        div.style.boxShadow = "0px 0px 10px";
+        div.style.borderRadius = "10px";
+        div.style.display = "flex";
+        div.style.flexDirection = "column";
+        div.style.alignItems = "center";
+        container.appendChild(div);
+
+        let h2 = document.createElement("h2");
+        h2.textContent = b[i].title;
+        h2.style.textAlign = "center";
+        h2.style.fontFamily = "times, serif";
+        h2.style.fontSize = "16px";
+        h2.style.marginTop = "10px";
+
+        let cat = document.createElement("p");
+        cat.textContent = b[i].category;
+        cat.style.fontSize = "1.4em";
+        cat.style.margin = "0px";
+        cat.style.marginTop = "15px";
+        cat.style.marginBottom = "10px";
+
+        let photo = document.createElement("img");
+        photo.src = b[i].image;
+        photo.style.width = "240px"
+        photo.style.height = "180px"
+
+        let des = document.createElement("p");
+        des.textContent = "Price: $" + b[i].price;
+        des.style.fontWeight = "700";
+        des.style.marginBottom = "0px"
+
+        let Rating = document.createElement("h6");
+        Rating.textContent = "Rating: " + b[i].rating.rate + "/5";
+        Rating.style.marginBottom = "0px";
+        Rating.style.marginTop = "5px";
+        Rating.style.fontSize = "13px"
+        
+        div.append(h2,cat,photo,des,Rating)
+        }
+    }
+
+    api();
+    </script>
+</body>
+</html>

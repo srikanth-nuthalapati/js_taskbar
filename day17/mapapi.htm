@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            padding-top: 40px;
+        }
+        .container{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .div{
+            width: 300px;
+            height: 420px;
+            box-shadow : 0px 0px 15px;
+            border-radius : 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .div:hover{
+            transform: scale(1.2);
+            background-color: white;
+        }
+        .div h2{
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            font-family: times, serif;
+        }
+        .div .cat{
+            font-size: 1.4em;
+            margin: 0;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .div img{
+            width: 240px;
+            height: 180px;
+        }
+        img:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .div .price{
+            font-weight: 700;
+            font-size: 1.2em;
+        }   
+        .div span{
+            font-size: 15px;
+        }     
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="bag"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="tshirt"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="jacket"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="tshirt"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="bracelet"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="bracelet"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="ring"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt="ring"><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+        <div class="div"><h2></h2><p class="cat"></p><img src="" alt=""><p class="price"></p><span></span></div>
+    </div>
+    <script>
+
+    async function api() {
+        let a = await fetch("https://fakestoreapi.com/products");
+        let b = await a.json();
+
+        let arr = b.map((val,i)=> {
+        let h2 = document.querySelectorAll("h2")[i];
+        h2.innerText = val.title;
+
+        let p = document.querySelectorAll("p.cat")[i];
+        p.innerText = val.category;
+
+        let img = document.querySelectorAll("img")[i];
+        img.src = val.image;
+
+        let price = document.querySelectorAll("p.price")[i];
+        price.innerText = "price: $" + val.price;
+
+        let r = document.querySelectorAll("span")[i];
+        r.innerText = "Rating: " + val.rating.rate + "/5";
+        });
+    }
+    api();
+    </script>
+</body>
+</html>

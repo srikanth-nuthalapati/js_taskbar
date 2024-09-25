@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom right, black ,brown,black)
+        }
+        .outer{
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0px 0px 15px;
+            }
+        #container{
+            width: 170px;
+            height: 50px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(27, 27, 27,0.3);
+            color: black;
+            border-radius: 20px;
+        }
+        div.hour{
+            width: 40px;
+            height: 100%;
+            font-size: 1.7em;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.min{
+            width: 40px;
+            height: 100%;
+            font-size: 1.7em;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div.sec{
+            width: 40px;
+            height: 100%;
+            display: flex;
+            font-size: 1.7em;
+            font-weight: bolder;
+            justify-content: center;
+            align-items: center;
+        }
+        div.am{
+            width: 40px;
+            height: 100%;
+            display: flex;
+            font-size: 1.3em;
+            font-weight: bolder;
+            justify-content: center;
+            align-items: center;
+        }
+        div.dot{
+            width: 10px;
+            font-size: 1.7em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        h1{
+            text-align: center;
+        }
+        .pole{
+            width: 30px;
+            height: 250px;
+            background-color: rgb(69, 69, 204);
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <h1>Digital Clock</h1>
+    <div id="container">
+    <div class="hour"></div>
+    <div class="dot">:</div>
+    <div class="min"></div>
+    <div class="dot">:</div>
+    <div class="sec"></div>
+    <div class="am"></div>
+    </div>
+   </div>
+   <div class="pole"></div>
+<script>
+
+    function digitalClock(){
+
+    let date = new Date();
+
+    let hour = document.getElementsByClassName("hour")[0];
+    if(date.getHours > 12){
+        hour.textContent = date.getHours() - 12;
+    }
+    else{
+        hour.textContent = date.getHours();
+    }
+    let min = document.getElementsByClassName("min")[0];
+    min.innerHTML = date.getMinutes();
+
+    let sec = document.getElementsByClassName("sec")[0];
+    sec.innerHTML =  date.getSeconds();
+
+    let ap = document.getElementsByClassName("am")[0];
+    ap.innerHTML = date.getHours() > 12 ? "PM" : "AM";
+}
+
+    setInterval(digitalClock, 1000);
+
+    let color = ['1','2','3','4','5','6','7','8','9','6','A','B','C'];
+
+    function colorChange(){
+
+    let hexcode = '#';
+    for (let i = 0; i < 6; i++) {
+        hexcode += color[Math.floor(Math.random() * color.length)];
+    }
+    let outer = document.querySelector("div");
+    outer.style.backgroundColor = hexcode;
+    }
+
+    setInterval(colorChange, );
+
+    
+
+</script>
+</body>
+</html>
