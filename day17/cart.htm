@@ -19,18 +19,23 @@
             justify-content: center;
             gap: 10px;
         }
+        div.not-active{
+            background-color: #5f3d3d;
+        }
     </style>
 </head>
 <body>
+
     <div id="container"></div>
+    <h1></h1>
     <script>
-        async function api() {
-            let a = await fetch("https://fakestoreapi.com/products");
-            let b = await a.json();
 
         let container = document.getElementById("container");
-        
-        let data = b.map((val) =>{
+
+        let arr = JSON.parse(localStorage.getItem("cart"));
+
+        let data = arr.map((val,i)=>{
+            
         let div = document.createElement("div");
         div.style.width = "300px";
         div.style.height = "420px";
@@ -39,8 +44,9 @@
         div.style.display = "flex";
         div.style.flexDirection = "column";
         div.style.alignItems = "center";
-        container.appendChild(div);
 
+        container.appendChild(div);
+        
         let h2 = document.createElement("h2");
         h2.textContent = val.title;
         h2.style.textAlign = "center";
@@ -65,17 +71,32 @@
         des.style.fontWeight = "700";
         des.style.marginBottom = "0px"
 
+        let divbox = document.createElement("div");
+        divbox.style.display = "flex";
+
         let Rating = document.createElement("h6");
         Rating.textContent = "Rating: " + val.rating.rate + "/5";
         Rating.style.marginBottom = "0px";
         Rating.style.marginTop = "5px";
         Rating.style.fontSize = "13px"
-        
-        div.append(h2,cat,photo,des,Rating)
-        })
-    }
 
-    api();
+        let btn = document.createElement("button");
+        btn.innerText = "remove";
+        btn.style.padding = "8px"
+        btn.style.borderRadius = "10px";
+        btn.style.backgroundColor = "red";
+        btn.style.color = "white";
+        btn.style.cursor = "pointer";
+
+        divbox.append(Rating,btn);
+
+        div.append(h2,cat,photo,des,divbox)
+
+           btn.onclick = function(){
+           div.style.display = "none";
+        }
+
+    });   
     </script>
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            form{
+                width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px;
+                box-shadow: 0 0 10px blue inset;
+                border-radius: 5px;
+            }
+            h3{
+                text-align: center;
+                margin-top: 0;
+                color: rgb(53, 42, 42);
+            }
+            label{
+                font-size: 1.3em;
+            }
+            input{
+                padding: 10px;
+            }
+            input.grp{
+                margin-left: 30px;
+            }
+            button{
+                padding: 10px 15px;
+                background-color: rgba(255, 0, 0, 0.774);
+                margin-top: 20px;
+                margin-left: 40%;
+                border-radius: 10px;
+                border: 1px solid;
+                color: white;
+            }
+            button:hover{
+                background-color: white;
+                border: 1px solid red;
+                color: black;
+            }
+            div{
+                color: green;
+                font-weight: 600;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+           <h3>Application Form</h3>
+            <label for="fname">Firstname : </label>
+            <input type="text" name="fname" placeholder="John" id="fname"><br><br>
+
+            <label for="lname">Lastname : </label>
+            <input type="text" name="lname" placeholder="Cena" id="lname"><br><br>
+
+            <Label for="email">Email :</Label>
+            <input class="grp" type="email" name="email" id="email" placeholder="abc@gamil.com"><br><br>
+
+            <label for="phone">Ph no : </label>
+            <input class="grp" type="number" name="phone" id="phone" placeholder="8998998898"><br><br>
+
+            <label for="gender">Gender : </label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label><br><br>
+
+            <label for="resume">Resume : </label>
+            <input type="file" name="resume" id="resume"><br>
+
+
+            <button>Apply</button>
+
+            
+        </form>
+
+        <script>
+
+                document.querySelector("button").addEventListener("click",(e) => {
+                e.preventDefault();
+                let fname = document.getElementById("fname").value;
+                let lname = document.getElementById("lname").value;
+                let mail = document.getElementById("email").value;
+                let phone = document.getElementById("phone").value;
+                let gender = document.getElementsByName('gender');
+                let Gender = "";             
+                for(let i of gender){
+                    if(i.checked){
+                      Gender = i.value;
+                    }
+                }
+                
+                localStorage.setItem("fname", fname);
+                localStorage.setItem("Lname", lname);
+                localStorage.setItem("email", mail);
+                localStorage.setItem("mobile", phone);
+                localStorage.setItem("gender", Gender);
+
+                window.open("temp.htm", "_self");
+            })
+        </script>
+    </body>
+    </html>
+</body>
+</html>

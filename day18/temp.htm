@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            box-shadow: 0 0 10px;
+            border-radius: 5px;
+        }
+        h2{
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        p{
+            font-size: 1.2em;
+            text-decoration: underline;
+        }
+        a{
+            display: block;
+            text-align: center;
+            text-decoration: underline;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h2>Your Application Submitted successfully</h3>
+        <h2>We will review it. And get back to you soon</h3>
+        <p>Here's a Copy of your Application Form:</p>
+        <h3 id="Firstname">First name : </h3>
+        <h3 id="Lastname">Last name : </h3>
+        <h3 id="email">Email : </h3>
+        <h3 id="Mobile">Mobile no : </h3>
+        <h3 id="gender">gender :</h3>
+
+    </div>
+
+    <script>
+        
+
+        let Fname = document.getElementById("Firstname");
+        let Lname = document.getElementById("Lastname");
+        let email = document.getElementById("email");
+        let mobile = document.getElementById("Mobile");
+        let Gender = document.getElementById("gender");
+
+        let fname =  localStorage.getItem("fname");
+        let lname = localStorage.getItem("Lname");
+        let mail  = localStorage.getItem("email");
+        let Mobile = localStorage.getItem("mobile");
+        let gender = localStorage.getItem("gender");
+
+
+        Fname.innerText = Fname.innerText +  " " + fname;
+        Lname.innerText = Lname.innerText + " "+ lname;
+        email.innerText = email.innerText + " " + mail;
+        mobile.innerText = mobile.innerText + " " + Mobile;
+        Gender.innerText = Gender.innerText + " " + gender;       
+       
+        
+    </script>
+</body>
+</html>
