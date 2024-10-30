@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        fetch("https://fakestoreapi.com/products/")
+        .then(response => response.json())
+        .then(data => data.map((data)=>{
+            let div = document.createElement("div");
+            div.style.width = "200px";
+            div.style.border = "1px solid red";
+            let h3 = document.createElement("h3");
+            h3.innerText = data.title;
+            let p = document.createElement("p");
+            let img = document.createElement("img");
+            img.src = data.image;
+            img.style.width = "90%";
+            div.append(h3,img);
+            document.body.appendChild(div);
+            document.body.style.display = "flex";
+            document.body.style.flexWrap = "wrap";
+            document.body.style.gap = "5px";
+        }))
+        .catch(rej => console.log("error"));
+    </script>
+</body>
+</html>
